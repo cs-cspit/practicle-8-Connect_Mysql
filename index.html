@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Portal | Modern Event Management</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-calendar-alt"></i>
+          <span>EventPortal</span>
+        </div>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="view_events.php">Events</a></li>
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Manage Your Events with Ease</h1>
+      <p>Create, organize, and track all your events in one place with our powerful event management system.</p>
+      <a href="#add-event" class="btn btn-secondary">Add New Event</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="stat-item">
+        <span class="stat-number">24</span>
+        <span class="stat-label">Total Events</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">5</span>
+        <span class="stat-label">Upcoming Events</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3</span>
+        <span class="stat-label">This Week</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">89%</span>
+        <span class="stat-label">Completion Rate</span>
+      </div>
+    </section>
+
+    <!-- Add Event Form -->
+    <section id="add-event">
+      <h2 class="section-title">Add New Event</h2>
+      <div class="card">
+        <div class="card-body">
+          <form action="add_event.php" method="POST" class="row">
+            <div class="col-2">
+              <div class="form-group">
+                <label for="event_name" class="form-label">Event Name</label>
+                <input type="text" id="event_name" name="event_name" class="form-control" placeholder="Enter event name" required>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="form-group">
+                <label for="event_category" class="form-label">Category</label>
+                <select id="event_category" name="event_category" class="form-control">
+                  <option value="business">Business</option>
+                  <option value="technology">Technology</option>
+                  <option value="social">Social</option>
+                  <option value="education">Education</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="form-group">
+                <label for="event_date" class="form-label">Event Date</label>
+                <input type="date" id="event_date" name="event_date" class="form-control" required>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="form-group">
+                <label for="event_time" class="form-label">Event Time</label>
+                <input type="time" id="event_time" name="event_time" class="form-control" required>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="event_desc" class="form-label">Event Description</label>
+                <textarea id="event_desc" name="event_desc" class="form-control" placeholder="Describe your event" required></textarea>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="event_location" class="form-label">Location</label>
+                <input type="text" id="event_location" name="event_location" class="form-control" placeholder="Event location">
+              </div>
+              <button type="submit" class="btn btn-secondary" style="margin-top: 1.5rem;">
+                <i class="fas fa-plus-circle"></i> Add Event
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section>
+      <h2 class="section-title">Quick Access</h2>
+      <div class="row">
+        <div class="col-3">
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <i class="fas fa-calendar-week" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3>View Events</h3>
+            <p>Browse all your events</p>
+            <a href="view_events.php" class="btn" style="margin-top: 1rem;">View All</a>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+            <h3>Dashboard</h3>
+            <p>See event analytics</p>
+            <a href="dashboard.php" class="btn btn-secondary" style="margin-top: 1rem;">View Dashboard</a>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <i class="fas fa-plus" style="font-size: 3rem; color: var(--success); margin-bottom: 1rem;"></i>
+            <h3>Add Event</h3>
+            <p>Create new event</p>
+            <a href="#add-event" class="btn btn-success" style="margin-top: 1rem;">Add New</a>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <i class="fas fa-cog" style="font-size: 3rem; color: var(--gray); margin-bottom: 1rem;"></i>
+            <h3>Settings</h3>
+            <p>Manage preferences</p>
+            <a href="#" class="btn btn-outline" style="margin-top: 1rem;">Configure</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>EventPortal</h3>
+          <p>Your complete solution for event management and organization.</p>
+
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="view_events.php">All Events</a></li>
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="#add-event">Create Event</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Event Guidelines</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> 24cs074@charusat.edu.in</li>
+            <li><i class="fas fa-phone"></i> +91 704180XXXX</li>
+            <li><i class="fas fa-map-marker-alt"></i> CSE,CSPIT,CHARUSAT</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2025 EventPortal. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('nav').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
